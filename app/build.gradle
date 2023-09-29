@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.application'
-    id 'maven-publish'
 }
 
 android {
@@ -21,13 +20,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            consumerProguardFiles 'consumer-rules.pro'
-        }
-    }
-
-    java {
-        toolchain {
-            languageVersion = JavaLanguageVersion.of(1_8)
         }
     }
 
@@ -36,22 +28,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.github.santacoderofficial'
-            artifactId = 'santacoder-cipher'
-            version = "1.0"
-            pom {
-                description = 'SantaCoder Cipher is an JWT Token Generator and Verifier.'
-            }
-        }
-    }
-    repositories {
-        mavenLocal()
-    }
 }
 
 dependencies {
